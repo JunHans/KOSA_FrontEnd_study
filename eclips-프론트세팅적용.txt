@@ -1,0 +1,49 @@
+1.이클립스 work스페이스를 바꾸면 새롭게 모든 설정값들이 셋팅됨.
+
+2. window-> preferences -> general ->workspace -> utf-8
+window-> preferences -> web -> css, html, jsp 전부 utf-8로
+
+
+오른쪽 상단 + 클릭 -> open Perspective 의 javaEE로 바꿈
+
+
+
+서버구성
+
+https://tomcat.apache.org/download-90.cgi#9.0.67
+
+다운로드 zip 한후
+
+C:\KOSA_IT\Web\frontUtils 에 압축 풀기
+
+bin 폴더 들어가서 
+startup 서버 시작
+
+shutdown 서버 종료
+
+
+window -> 속성
+Server -> Runtime Environments -> add -> 아파치톰캣 경로 추가
+C:\KOSA_IT\Web\frontUtils\apache-tomcat-9.0.67\apache-tomcat-9.0.67
+
+맨밑에 server탭 클릭 -> 서버 추가.
+
+
+오라클이랑 같이 사용할경우 8080 포트를 사용하므고
+
+서버 프로젝트의 server.xml의 밑의 Source 탭 클릭후 포트 변경.
+
+    <Connector connectionTimeout="20000" port="80" protocol="HTTP/1.1" redirectPort="8443"/>
+
+
+
+
+file-> Dyanmic web project -> 만들때 target runtime 아파치 톰캣 다운로드한 버전 선택.
+
+폴더 오른쪽 버튼
+속성 -> project facets
+java 1.8 버전으로 다운
+
+
+window -> webBrowser -> chrome 브라우저 변경
+
