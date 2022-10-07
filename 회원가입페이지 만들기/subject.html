@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title >3조 회원가입</title>
+    <link rel="icon" type="image/x-icon" href="/WebBasic/src/main/webapp/images/3_TEAM_Hearts1.png">
+    <link rel="stylesheet" href="css/subject.css">
+</head>
+
+<body>
+    <div class="mytitle">
+        <div id="menulist">
+            <ul class="menuli">
+                <li class="menuli1"><a href="#home" id="home" title='3조 홈으로 가기'>Home</a></li>
+                <li class="menuli1"><a href="#news" title='3조 뉴스보러 가기'>News</a></li>
+                <li class="menuli1"><a href="#contact" title='3조와 만나려면?'>Contact</a></li>
+                <li class="menuli1"><a href="#about" title='3조는 누구인가?'>About</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- wrap -->
+    <div class="wrap">
+        <!-- header -->
+        <header id="header" role="banner" class="header">
+            <h1 class="logo_payco"><span>회원 가입</span></h1>
+        </header>
+
+        <!-- //header -->
+
+        <!-- container -->
+        <div id="container">
+            <h1 class="blind">회원 가입</h1>
+            <div class="content">
+                <div class="tit_area">
+                    <h2 class="h_tit" id="welcome">WELCOME TO 3 TEAM</h2>
+
+                </div>
+
+                <form id="frmJoin" name="frmJoin" action="/join.nhn" method="post" onsubmit="return confirm_submit();">
+                    <input type="hidden" name="emailValid" id="emailValid" value="">
+                    <input type="hidden" name="subEmailValid" id="subEmailValid" value="">
+                    <input type="hidden" name="fullid" id="fullid" value="">
+                    <input type="hidden" name="encnm" id="encnm" value="">
+                    <input type="hidden" name="encpw" id="encpw" value="">
+                    <input type="hidden" name="idFormCode" id="idFormCode" value="EMAIL">
+                    <input type="hidden" name="serviceProviderCode" id="serviceProviderCode" value="PAY">
+                    <input type="hidden" name="token" id="token" value="Jm1gav4l3mefms93">
+                    <input type="hidden" name="svcType" id="svcType" value="WEB">
+                    <input type="hidden" name="serviceOfferYn" id="serviceOfferYn" value="Y">
+                    <input type="hidden" name="client_id" id="client_id" value="">
+                    <input type="hidden" name="serviceClientId" id="serviceClientId" value="">
+                    <input type="hidden" name="response_type" id="response_type" value="token">
+                    <input type="hidden" name="redirect_uri" id="redirect_uri" value="">
+                    <input type="hidden" name="nextURL" id="nextURL" value="https://www.payco.com/afterLogin.nhn">
+                    <input type="hidden" name="mobileNo" id="mobileNo" value="">
+                    <input type="hidden" name="popUp" value="N" /><input type="hidden" name="popUp" value="N" />
+                    <input type="hidden" name="migrationCode" id="migrationCode" value="">
+                    <input type="hidden" name="smsAuthInfoYn" id="smsAuthInfoYn" value="">
+                    <input type="hidden" name="emailReceiveYn" id="emailReceiveYn">
+                    <input type="hidden" name="locationBasedServiceUseAgreeYn" id="locationBasedServiceUseAgreeYn">
+                    <input type="hidden" name="captchaToken" id="captchaToken" value="">
+                    <input type="hidden" name="df" id="df" value="">
+                    <input type="hidden" name="joinForPayFlag" id="joinForPayFlag" value="Y">
+                    <input type="hidden" name="protectorAgreeNeedAgeYn" id="protectorAgreeNeedAgeYn" value="N">
+                    <input type="hidden" name="loginUrl" id="loginUrl"
+                        value="/login.nhn?serviceProviderCode=PAY&nextURL=https%3A%2F%2Fwww.payco.com%2FafterLogin.nhn">
+                    <input type="hidden" name="joinEmailDeletionUrl" id="joinEmailDeletionUrl"
+                        value="/certificate/email/certifyPreprocess.nhn?authReason=JOIN_EMAIL_DELETION&nextUrl=%2Fmember%2FemailAuthDeletion.nhn%3FnextUrl%3D%252Fjoin.nhn%253FserviceProviderCode%253DPAY%2526svcType%253DWEB%2526smsAuthInfoYn%253D%2526serviceOfferYn%253DY%2526nextURL%253Dhttps%25253A%25252F%25252Fwww.payco.com%25252FafterLogin.nhn%2526response_type%253Dtoken%2526loginUrl%253D%25252Flogin.nhn%25253FserviceProviderCode%25253DPAY%252526nextURL%25253Dhttps%2525253A%2525252F%2525252Fwww.payco.com%2525252FafterLogin.nhn&authErrorUrl=%2Fjoin.nhn%3FserviceProviderCode%3DPAY%26svcType%3DWEB%26smsAuthInfoYn%3D%26serviceOfferYn%3DY%26nextURL%3Dhttps%253A%252F%252Fwww.payco.com%252FafterLogin.nhn%26response_type%3Dtoken%26loginUrl%3D%252Flogin.nhn%253FserviceProviderCode%253DPAY%2526nextURL%253Dhttps%25253A%25252F%25252Fwww.payco.com%25252FafterLogin.nhn&serviceProviderCode=PAY">
+                    <input type="hidden" name="state" id="state" value="">
+
+                    <ul class="tab">
+                        <li id="tab_join_email" class="tab_item is_selected">
+                            <a href="#" class="tab_link" aria-selected="true" title='Email로 가입하기'>By Email</a>
+                        </li>
+                        <li id="tab_join_mobile" class="tab_item">
+                            <a href="#" class="tab_link" aria-selected="false" title='Phone으로 가입하기'
+                                onclick="selectJoinForm()">By Phone</a>
+                        </li>
+                    </ul>
+
+                    <span id="email_id_input" class="inp_bx sel">
+                        <span id="idInput" class="inp_txt">
+                            <input type="text" name="email_id" id="email_id" maxlength="45" value="" class="inp"
+                                autocomplete="off" title="이메일 주소" placeholder="Email Address"
+                                onfocus="onClassName('email_id_input');"
+                                onblur="this.value=this.value.trim().toLowerCase();offClassName('email_id_input');validateEmailId(false);"
+                                required />
+                            <button type="button" class="btn_del" tabindex="-1"><span class="ico_del">입력한 내용
+                                    지우기</span></button>
+                        </span>
+                        <p id="email_msg" class="error_txt" role="alert" aria-live="off"></p>
+                    </span>
+
+                    <span id="pw_input" class="inp_bx">
+                        <span id="span_capslock" class="tooltip"><em class="txt"><strong>Caps Lock</strong>이 켜져
+                                있습니다.</em></span>
+                        <span class="inp_txt">
+                            <input type="password" class="inp" placeholder="Password" title="비밀번호"
+                                name="pw" id="pw" maxlength="15" autocomplete="off" autocapitalize="none"
+                                onchange="validatePW(false);" onfocus="onClassName('pw_input');
+                            validateEmailId(false);" onkeypress="isCapslock(event, 'span_capslock');"
+                                onblur="offCapslock('span_capslock');" required />
+                            <button type="button" id="deletePasswordBtn" class="btn_del" tabindex="-1"><span
+                                    class="ico_del">입력한 내용 지우기</span></button>
+                        </span>
+                        <p id="pw_msg" class="error_txt" role="alert" aria-live="off"></p>
+                    </span>
+
+                    <span id="pw_re_input" class="inp_bx">
+                        <span id="span_capslock2" class="tooltip"><em class="txt"><strong>Caps Lock</strong>이 켜져
+                                있습니다.</em></span>
+                        <span class="inp_txt">
+                            <input type="password" class="inp" placeholder="Password-Re-enter" title="비밀번호 재입력" name="pw_re"
+                                id="pw_re" maxlength="15" autocomplete="off" autocapitalize="none"
+                                onchange="validatePW(false);" onfocus="onClassName('pw_re_input');
+                            validateEmailId(false);" onkeypress="isCapslock(event, 'span_capslock2');"
+                                onblur="offCapslock('span_capslock2');" required />
+                            <button type="button" id="deletePasswordReBtn" class="btn_del" tabindex="-1"><span
+                                    class="ico_del">입력한 내용 지우기</span></button>
+                        </span>
+                        <p id="pw_re_msg" class="error_txt" role="alert" aria-live="off"></p>
+                    </span>
+
+
+                    <div class="checkbox_area agree_all">
+                        <span id="box" class="inp_checkbox1 inp_label chk_common" role="checkbox"
+                            aria-checked="false" tabindex="0" title="약관 전체 동의">
+                            Entire Agreement </span>
+                            
+                    </div>
+
+                    
+
+
+                    <input type="hidden" name="clickAreaEmailSaveIdx" id="clickAreaEmailSaveIdx" value="">
+
+                    <div class="btn_area">
+                        <button type="button" onClick="javascript:doSubmit();" class="btn btn_full btn_point" title='회원가입 하기'>Sign In</button>
+                    </div>
+
+                    <p class="noti_txt">3조 조원이 되시면 다양한 제휴 서비스를 하나의 아이디로 이용하실 수 있습니다.</p>
+                </form>
+
+            </div>
+        </div>
+        <!-- //container -->
+
+        <!-- footer -->
+        <!-- //footer -->
+    </div>
+
+    <form id="joinForm" name="joinForm" method="post" action="/joinMobile.nhn" accept-charset="UTF-8">
+        <input type="hidden" name="serviceProviderCode" value="PAY">
+        <input type="hidden" name="svcType" value="WEB">
+        <input type="hidden" name="serviceOfferYn" value="Y">
+        <input type="hidden" name="client_id" value="">
+        <input type="hidden" name="serviceClientId" value="">
+        <input type="hidden" name="migrationCode" value="">
+        <input type="hidden" name="smsAuthInfoYn" value="">
+        <input type="hidden" name="nextUrl" value="https://www.payco.com/afterLogin.nhn">
+        <input type="hidden" name="response_type" value="token">
+        <input type="hidden" name="redirect_uri" value="">
+        <input type="hidden" name="loginUrl"
+            value="/login.nhn?serviceProviderCode=PAY&nextURL=https%3A%2F%2Fwww.payco.com%2FafterLogin.nhn">
+        <input type="hidden" name="state" value=""> <input type="hidden" name="captchaToken" value="">
+    </form>
+
+    <form id="joinBusinessMemberForm" name="joinBusinessMemberForm" method="post" action="/joinBusinessMember.nhn"
+        accept-charset="UTF-8">
+        <input type="hidden" name="serviceProviderCode" value="PAY">
+        <input type="hidden" name="svcType" value="WEB">
+        <input type="hidden" name="serviceOfferYn" value="Y">
+        <input type="hidden" name="client_id" value="">
+        <input type="hidden" name="serviceClientId" value="">
+        <input type="hidden" name="migrationCode" value="">
+        <input type="hidden" name="smsAuthInfoYn" value="">
+        <input type="hidden" name="nextUrl" value="https://www.payco.com/afterLogin.nhn">
+        <input type="hidden" name="response_type" value="token">
+        <input type="hidden" name="redirect_uri" value="">
+        <input type="hidden" name="loginUrl"
+            value="/login.nhn?serviceProviderCode=PAY&nextURL=https%3A%2F%2Fwww.payco.com%2FafterLogin.nhn">
+        <input type="hidden" name="state" value=""> <input type="hidden" name="captchaToken" value="">
+    </form>
+
+    <form id="reloadForm" name="reloadForm" method="post" action="/join.nhn" accept-charset="UTF-8">
+        <input type="hidden" name="serviceProviderCode" value="PAY">
+        <input type="hidden" name="svcType" value="WEB">
+        <input type="hidden" name="serviceOfferYn" value="Y">
+        <input type="hidden" name="client_id" value="">
+        <input type="hidden" name="serviceClientId" value="">
+        <input type="hidden" name="migrationCode" value="">
+        <input type="hidden" name="smsAuthInfoYn" value="">
+        <input type="hidden" name="nextUrl" value="https://www.payco.com/afterLogin.nhn">
+        <input type="hidden" name="response_type" value="token">
+        <input type="hidden" name="redirect_uri" value="">
+        <input type="hidden" name="loginUrl"
+            value="/login.nhn?serviceProviderCode=PAY&nextURL=https%3A%2F%2Fwww.payco.com%2FafterLogin.nhn">
+        <input type="hidden" name="state" value=""> <input type="hidden" name="joinType" id="joinType" value="EMAIL">
+    </form>
+
+    <div id="emailTypingErrorLayerContents" style="display:none">
+        <h2 id="inputEmail" class="ly_tit"></h2>
+        <p class="ly_desc">입력하신 이메일에 오타가 발견되었습니다.<br><strong id="correctDomain"></strong>으로 변경할까요?</p>
+    </div>
+
+
+    <!-- provisionArea -->
+    <div id="provisionDimmed" class="dimmed" style="display:none;"></div>
+    <div id="provisionArea" class="ly_pop_wrap" role="dialog" style="display: none;">
+        <div class="ly_pop ly_term_pop frame_full" tabindex="0">
+            <div class="ly_cont">
+                <h2 class="ly_tit" id="provisionTitle" tabindex="0"></h2>
+                <div class="frame_wrap">
+                    <iframe id="provisionIframe" class="iframe" src="" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="ly_btn_area is_btn_full">
+                <button type="button" class="btn" id="provisionCloseButton">확인</button>
+            </div>
+        </div>
+        <span class="vmiddle"></span>
+    </div>
+
+</body>
+
+</html>
