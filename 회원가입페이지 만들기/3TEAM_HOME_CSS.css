@@ -1,0 +1,113 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif
+}
+
+.w3-row-padding img {
+    margin-bottom: 12px
+}
+
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {
+    width: 120px;
+    background: #222;
+}
+
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {
+    margin-left: 120px
+}
+
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {
+    #main {
+        margin-left: 0
+    }
+}
+
+.inp_checkbox1 {
+    border-radius: 15px;
+    border-style: outset;
+    position: absolute;
+}
+
+.w3-bar-item w3-button {
+    width: 25%;
+}
+
+.inp {
+    height: 28px;
+    width: 85%;
+}
+
+#email_id {
+    height: 28px;
+    width: 85%;
+}
+
+hr {
+    width: 200px;
+}
+
+#heart {
+    width: 100%;
+}
+#title3{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#dragdrop{
+    display: inline-block;
+    width: 800px;
+    /* padding: 10px; */
+    margin: 0px;
+}
+
+
+
+#div1 {
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    margin: 10px 10px 10px 0px;
+    border: 1px solid #aaaaaa;
+    float: left;
+}
+#dire{
+    width: 40px;
+    height: 70px;
+    margin: 70px 0px;
+    float: left;
+}
+#div2 {
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    margin: 10px 10px 10px 10px;
+    border: 1px solid #aaaaaa;
+    float: left;
+}
+#du{
+    width: 90px;
+    height: 90px;
+}
+#localbtn{
+    border-radius: 5px;
+    /* font-weight: bold; */
+}
+#agreebtn{
+    margin: 10px 0px 0px 0px;
+}
+#headingOne{
+    margin: 0px;
+}
+#headingOne1, #headingOne2, #headingOne3{
+    width: 85%;
+}
+#localbtn, #agreebtn{
+    font-weight: bold;
+}
